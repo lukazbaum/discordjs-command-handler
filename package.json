@@ -1,0 +1,25 @@
+{
+  "name": "discordjs-command-handler",
+  "version": "1.0.0",
+  "description": "A comprehensive TypeScript command handler for Discord.js, featuring slash commands, prefix commands, message events, automatic intents, and more.",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "npm run clean && tsc",
+    "start": "node dist/index.js",
+    "watch": "tsc -w",
+    "cs": "npm run compile && npm run start"
+  },
+  "keywords": [],
+  "author": "Lukas Baum",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.6",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.0",
+    "glob": "^10.3.10"
+  }
+}
