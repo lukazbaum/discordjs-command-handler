@@ -2,7 +2,7 @@
 name: Question/Support
 about: Ask a question or seek support regarding the Discord Bot Handler
 title: '[SUPPORT]: '
-labels: 'question', 'support'
+labels: 'question'
 assignees: ''
 
 ---
