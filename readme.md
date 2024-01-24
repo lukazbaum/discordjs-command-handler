@@ -400,7 +400,7 @@ const discordTimestamp = formatTimestamp(unixTimestamp, TimestampStyle.ShortDate
 
 ## 📝 License
 This project is licensed under the [MIT] License, chosen for its permissive nature, allowing developers to freely use, modify, and distribute the code.
-See the [LICENSE.md](LICENSE.md) file for details.
+See the [LICENSE](LICENSE) file for details.
 
 ## 👥 Contributing
 Contributions & Issues are welcome! Please follow our [Contribution Guidelines](.github/CONTRIBUTING.md).
