@@ -1,10 +1,9 @@
 ---
-name: Code Improvement/Suggestion
+name: Code Improvement
 about: Propose improvements or suggest changes to the Discord Bot Handler's codebase
 title: '[IMPROVEMENT]: '
-labels: 'code improvement', 'suggestion'
+labels: 'code improvement'
 assignees: ''
-
 ---
 
 **Describe Your Suggestion or Improvement**
