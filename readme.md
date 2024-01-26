@@ -66,6 +66,9 @@ Before you begin, ensure you have the following:
 - Node.js (v20.7 or higher)
 - npm (v10.1 or higher)
 - A Discord Bot Application (see [Discord's developer portal](https://discord.com/developers/applications) to create a bot)
+- Ensure the Discord Bot is configured with the `MESSAGE CONTENT` Privileged Gateway Intent enabled. You can set this in the Bot section under Settings on the [Discord's developer portal](https://discord.com/developers/applications).
+**Note:** If you prefer not to use this intent, you have the option to disable it in the configuration file.
+- Make sure the bot invite link includes the `applications.commands` scope to enable slash commands. Update the link in the OAuth2 section on the [Discord's developer portal](https://discord.com/developers/applications) if needed.
 
 ### 2. 📥 Cloning the Repository
 Clone the repository using Git:
