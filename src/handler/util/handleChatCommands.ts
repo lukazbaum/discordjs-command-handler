@@ -12,7 +12,10 @@ export async function handleMessageCommands(message: Message): Promise<void> {
 }
 
 async function handlePrefixCommand(message: Message): Promise<void> {
-    const messageCommand: string = message.content.split(" ")[0].replace(prefix, "");
+    const matches = prefix.match(/\s/g);
+    const whitespaceAmount: number = matches ? matches.length : 0;
+    const messageCommand: string = message.content.split(" ")[whitespaceAmount].replace(prefix, "");
+
     let command: PrefixCommandModule | string | undefined =
         client.commands.prefix.get(messageCommand)
         || client.commands.aliases.prefix.get(messageCommand);
