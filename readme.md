@@ -6,7 +6,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/node-v20.7+-228B22" alt="node - v20.7+">
   <img src="https://img.shields.io/badge/npm-v10.1+-orange" alt="npm - v10.1+">
-  <img src="https://img.shields.io/badge/discord.js-v14.14.1-5865F2" alt="discord.js - v14.14.1">
+  <img src="https://img.shields.io/badge/discord.js-v14.15.2-5865F2" alt="discord.js - v14.14.1">
   <img src="https://img.shields.io/badge/Maintenance-Active-green.svg" alt="Maintenance - Active">
 </p>
 
