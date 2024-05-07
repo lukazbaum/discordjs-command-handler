@@ -18,7 +18,8 @@ export const client: DiscordClient = new DiscordClient({
     await client.registerCommands({
         // Whether to deploy your Slash Commands to the Discord API (refreshes command.data)
         // Not needed when just updating the execute function.
-        // Keep in mind that guild commands will be deployed instantly and global commands can take up to one hour.
+        // Keep in mind that guild commands (deploy: false) will be deployed instantly
+        // and global commands (deploy: true) can take up to one hour.
         deploy: true
     });
     await client.connect(process.env.CLIENT_TOKEN);
