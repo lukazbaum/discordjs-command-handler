@@ -75,7 +75,7 @@ Clone the repository using Git:
 ```bash
 git clone https://github.com/lukazbaum/discordjs-command-handler
 ```
-Alternatively, [download](https://www.youtube.com) it as a ZIP file and extract it.
+Alternatively, [download](https://github.com/lukazbaum/discordjs-command-handler/archive/refs/heads/master.zip) it as a ZIP file and extract it.
 
 Navigate to the directory:
 ```bash
