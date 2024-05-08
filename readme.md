@@ -100,6 +100,15 @@ CLIENT_ID=your_discord_client_id
 GUILD_ID=your_discord_guild_id
 ```
 
+When using Linux as operating system change this line in the `package.json` file:
+```json
+"compile": "npm run clean-windows && tsc",
+```
+to this
+```json
+"compile": "npm run clean-linux && tsc",
+```
+
 ### 5. 🤖 Running the Bot
 Use the following commands to compile and start your bot:
 
