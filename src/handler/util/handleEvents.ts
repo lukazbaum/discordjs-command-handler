@@ -15,7 +15,7 @@ export async function registerEvents(client: DiscordClient): Promise<void> {
             if (eventModule.once) client.once(String(eventModule.name), (...args: any[]) => eventModule.execute(...args));
             else client.on(String(eventModule.name), (...args: any[]) => eventModule.execute(...args));
         } catch (err) {
-            Logger.error(`Failed to load event at ${importPath}`);
+            Logger.error(`Failed to load event at ${importPath}`, err);
         }
     }
 }

@@ -24,7 +24,7 @@ export async function registerComponents(client: DiscordClient): Promise<void> {
                 else if (module.group) client.components.modals.set(module.group, module);
             }
         } catch (err) {
-            Logger.error(`Failed to load component at ${importPath}`);
+            Logger.error(`Failed to load component at ${importPath}`, err);
         }
     }
 }

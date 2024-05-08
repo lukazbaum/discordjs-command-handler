@@ -63,7 +63,7 @@ async function getCommandModules(client: DiscordClient): Promise<void> {
                 client.commands.context.set(module.data.name, module);
             }
         } catch (err) {
-            Logger.error(`Failed to load command at ${importPath}`);
+            Logger.error(`Failed to load command at ${importPath}`, err);
         }
     }
     if (client.commands.slash.size > 100) {
