@@ -160,7 +160,21 @@ export enum Intent {
      * Required for event:
      * - AutoModerationActionExecution
      */
-    AutoModerationExecution = 2097152
+    AutoModerationExecution = 2097152,
+
+    /**
+     * Required for event:
+     * - MessagePollVoteAdd
+     * - MessagePollVoteRemove
+     */
+    GuildMessagePolls = 16777216,
+
+    /**
+     * Required for event:
+     * - MessagePollVoteAdd
+     * - MessagePollVoteRemove
+     */
+    DirectMessagePolls = 33554432
 }
 
 export const AutomaticIntents: never[] = [];

@@ -57,5 +57,7 @@ export const EventIntentMapping: Record<string, Array<Intent>> = {
     autoModerationRuleCreate: [Intent.AutoModerationConfiguration],
     autoModerationRuleUpdate: [Intent.AutoModerationConfiguration],
     autoModerationRuleDelete: [Intent.AutoModerationConfiguration],
-    autoModerationActionExecution: [Intent.AutoModerationExecution]
+    autoModerationActionExecution: [Intent.AutoModerationExecution],
+    messagePollVoteAdd: [Intent.GuildMessagePolls, Intent.DirectMessagePolls],
+    messagePollVoteRemove: [Intent.GuildMessagePolls, Intent.DirectMessagePolls]
 }
