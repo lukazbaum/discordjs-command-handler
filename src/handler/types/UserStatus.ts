@@ -1,7 +1,7 @@
 export enum UserStatus {
-    "INVISIBLE" = "invisible",
-    "OFFLINE" = "offline",
-    "IDLE" = "idle",
-    "ONLINE" = "online",
-    "DND" = "dnd"
+    Invisible = "invisible",
+    Offline = "offline",
+    Idle = "idle",
+    Online = "online",
+    Dnd = "dnd"
 }

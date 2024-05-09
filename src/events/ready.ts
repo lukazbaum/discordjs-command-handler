@@ -9,7 +9,7 @@ export = {
     async execute(client: DiscordClient): Promise<void> {
         if (!client.user) return;
 
-        client.user.setStatus(UserStatus.ONLINE);
+        client.user.setStatus(UserStatus.Online);
         client.user.setActivity("Development", { type: ActivityType.Watching });
         Logger.log(`Ready! Logged in as ${client.user.tag}`);
     }

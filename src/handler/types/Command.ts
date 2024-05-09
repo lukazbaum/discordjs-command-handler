@@ -8,16 +8,16 @@ import {
 } from "discord.js";
 
 export enum CommandTypes {
-    "SlashCommand" = "SlashCommand",
-    "PrefixCommand" = "PrefixCommand",
-    "MessageCommand" = "MessageCommand",
-    "PingCommand" = "PingCommand",
-    "ContextMenu" = "ContextMenu"
+    SlashCommand = "SlashCommand",
+    PrefixCommand = "PrefixCommand",
+    MessageCommand = "MessageCommand",
+    PingCommand = "PingCommand",
+    ContextMenu = "ContextMenu"
 }
 
 export enum RegisterTypes {
-    "Guild" = "applicationGuildCommands",
-    "Global" = "applicationCommands"
+    Guild = "applicationGuildCommands",
+    Global = "applicationCommands"
 }
 
 export interface CommandCollections {
