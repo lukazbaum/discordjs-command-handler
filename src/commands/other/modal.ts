@@ -1,4 +1,4 @@
-import { CommandTypes, RegisterTypes, SlashCommandModule } from "../../handler/types/Command";
+import { CommandTypes, RegisterTypes, SlashCommandModule } from "../../handler";
 import {
     CommandInteraction,
     ModalBuilder,

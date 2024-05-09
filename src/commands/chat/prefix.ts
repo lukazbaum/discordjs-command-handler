@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { CommandTypes, PrefixCommandModule } from "../../handler/types/Command";
+import { CommandTypes, PrefixCommandModule } from "../../handler";
 
 export = {
     name: "pong",

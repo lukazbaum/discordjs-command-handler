@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { CommandTypes, PingCommandModule } from "../../handler/types/Command";
+import { CommandTypes, PingCommandModule } from "../../handler";
 
 export = {
     name: "help",

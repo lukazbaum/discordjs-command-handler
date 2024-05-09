@@ -1,5 +1,5 @@
-import { AnySelectMenuInteraction, ModalSubmitInteraction } from "discord.js";
-import { ComponentModule, ComponentTypes } from "../../handler/types/Component";
+import { ModalSubmitInteraction } from "discord.js";
+import { ComponentModule, ComponentTypes } from "../../handler";
 
 export = {
     id: "modalExample",

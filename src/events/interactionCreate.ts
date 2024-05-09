@@ -1,5 +1,5 @@
+import { EventModule } from "../handler";
 import { Events, Interaction } from "discord.js";
-import { EventModule } from "../handler/types/EventModule";
 import { handleComponents } from "../handler/util/handleComponents";
 import { handleInteractionCommands } from "../handler/util/handleInteractionCommands";
 

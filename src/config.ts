@@ -1,6 +1,5 @@
-import { Intent } from "./handler/types/Intent";
+import { Intent, ConsoleColor } from "./handler";
 import { EmbedBuilder, Interaction } from "discord.js";
-import { ConsoleColor } from "./handler/types/ConsoleColor";
 
 // Message command prefix.
 export const prefix: string = "!";

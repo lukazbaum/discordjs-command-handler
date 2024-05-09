@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { CommandTypes, MessageCommandModule } from "../../handler/types/Command";
+import { CommandTypes, MessageCommandModule } from "../../handler";
 
 export = {
     name: "Hello",

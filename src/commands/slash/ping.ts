@@ -1,5 +1,5 @@
+import { CommandTypes, RegisterTypes, SlashCommandModule } from "../../handler";
 import { CommandInteraction, PermissionFlagsBits, SlashCommandBuilder } from "discord.js";
-import { CommandTypes, RegisterTypes, SlashCommandModule } from "../../handler/types/Command";
 
 export = {
     type: CommandTypes.SlashCommand,

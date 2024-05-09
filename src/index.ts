@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { AutomaticIntents } from "./handler/types/Intent";
+import { AutomaticIntents } from "./handler";
 import { DiscordClient } from "./handler/util/DiscordClient";
 
 export const client: DiscordClient = new DiscordClient({

@@ -1,7 +1,6 @@
-import { BackgroundColor, Color, Format } from "../../handler/types/Formatting";
 import { ColoredMessageBuilder } from "../../handler/util/ColoredMessageBuilder";
 import { CommandInteraction, PermissionFlagsBits, SlashCommandBuilder } from "discord.js";
-import { CommandTypes, RegisterTypes, SlashCommandModule } from "../../handler/types/Command";
+import { CommandTypes, RegisterTypes, SlashCommandModule, Color, BackgroundColor, Format } from "../../handler";
 
 export = {
     type: CommandTypes.SlashCommand,

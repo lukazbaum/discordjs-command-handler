@@ -1,7 +1,6 @@
 import Logger from "../handler/util/Logger";
 import { Events, ActivityType } from "discord.js";
-import { UserStatus } from "../handler/types/UserStatus";
-import { EventModule } from "../handler/types/EventModule";
+import { EventModule, UserStatus } from "../handler";
 import { DiscordClient } from "../handler/util/DiscordClient";
 
 export = {

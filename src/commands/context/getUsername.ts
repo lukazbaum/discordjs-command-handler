@@ -1,4 +1,4 @@
-import { CommandTypes, ContextMenuCommandModule, RegisterTypes } from "../../handler/types/Command";
+import { CommandTypes, ContextMenuCommandModule, RegisterTypes } from "../../handler";
 import { ContextMenuCommandBuilder, ApplicationCommandType, ContextMenuCommandInteraction, User } from "discord.js";
 
 export = {
