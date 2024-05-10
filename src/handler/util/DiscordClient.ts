@@ -74,7 +74,7 @@ export class DiscordClient extends Client {
 
     public async registerComponents(): Promise<void> {
         await registerComponents(this);
-    }
+    };
 
     public async connect(token: string | undefined): Promise<void> {
         if (token === undefined) return Logger.error("Token is undefined. Please provide a valid token.")
