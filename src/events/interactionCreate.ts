@@ -6,9 +6,19 @@ import { handleInteractionCommands } from "../handler/util/handleInteractionComm
 export = {
     name: Events.InteractionCreate,
     async execute(interaction: Interaction): Promise<void> {
-        // Handles Slash Commands and Context Menus.
-        await handleInteractionCommands(interaction);
+        // Handles Slash Commands, Autocomplete Commands and Context Menus.
+        if (
+            interaction.isCommand()
+            || interaction.isContextMenuCommand()
+            || interaction.isAutocomplete()
+        ) await handleInteractionCommands(interaction);
+
+
         // Handles Buttons, Select Menus and Modals.
-        await handleComponents(interaction);
+        else if (
+            interaction.isButton()
+            || interaction.isAnySelectMenu()
+            || interaction.isModalSubmit()
+        ) await handleComponents(interaction);
     }
 } as EventModule;
