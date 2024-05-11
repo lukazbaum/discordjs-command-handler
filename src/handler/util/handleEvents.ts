@@ -5,17 +5,22 @@ import { DiscordClient } from "./DiscordClient";
 import { EventModule } from "../types/EventModule";
 
 export async function registerEvents(client: DiscordClient): Promise<void> {
-    let eventsPaths: string[] = await glob(`**/${eventsFolderName}/**/**/*.js`);
+    const eventsPaths: string[] = await glob(`**/${eventsFolderName}/**/**/*.js`);
 
-    for (const event of eventsPaths) {
-        let importPath: string = `../..${event.replace(/^dist[\\\/]|\\/g, "/")}`;
+    for (const eventPath of eventsPaths) {
+        const importPath: string = `../..${eventPath.replace(/^dist[\\\/]|\\/g, "/")}`;
         try {
-            let eventModule: EventModule = (await import(importPath)).default;
-            client.events.push(eventModule.name);
-            if (eventModule.once) client.once(String(eventModule.name), (...args: any[]) => eventModule.execute(...args));
-            else client.on(String(eventModule.name), (...args: any[]) => eventModule.execute(...args));
+            const eventModule: EventModule = (await import(importPath)).default;
+            const { name, execute, once } = eventModule;
+
+            client.events.push(name);
+            if (once) {
+                client.once(String(name), (...args: any[]) => execute(...args));
+            } else {
+                client.on(String(name), (...args: any[]) => execute(...args));
+            }
         } catch (err) {
-            Logger.error(`Failed to load event at ${importPath}`, err);
+            Logger.error(`Failed to load event at: ${importPath}`, err);
         }
     }
 }
