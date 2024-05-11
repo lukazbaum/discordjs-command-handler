@@ -14,7 +14,7 @@ export interface ComponentCollections {
 }
 
 export enum ComponentTypes {
-    Button = "ButtonComponent",
-    SelectMenu = "SelectMenuComponent",
-    Modal = "ModalComponent"
+    Button = "buttons",
+    SelectMenu = "selectMenus",
+    Modal = "modals"
 }
