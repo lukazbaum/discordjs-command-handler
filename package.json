@@ -4,7 +4,7 @@
   "description": "A comprehensive TypeScript command handler for Discord.js, featuring slash commands, prefix commands, message events, automatic intents, and more.",
   "main": "src/index.ts",
   "scripts": {
-    "clean-windows": "del -f \"dist*\"",
+    "clean-windows": "rd /s /q dist",
     "clean-linux": "rm -rf dist",
     "compile": "npm run clean-windows && tsc",
     "start": "node dist/index.js",
