@@ -197,7 +197,7 @@ export async function isAllowedCommand(
         || (command.nsfw && channel && !(channel as TextChannel).nsfw);
 }
 
-export async function hasCooldown(userId: string, commandName: string, cooldown: number | undefined): Promise<boolean | number> {
+export function hasCooldown(userId: string, commandName: string, cooldown: number | undefined): boolean | number {
     if (!cooldown) return true;
 
     const currentTimestamp: number = Math.floor(Date.now() / 1000);
