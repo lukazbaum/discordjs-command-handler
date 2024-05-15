@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 import { AutomaticIntents } from "./handler";
 import { DiscordClient } from "./handler/util/DiscordClient";
 
@@ -12,7 +12,7 @@ export const client: DiscordClient = new DiscordClient({
 
 (async (): Promise<void> => {
     // You can modify the "events", "components" and "commands" folder name in the config.ts file.
-    // All directory's can have subfolders, subfolders in subfolders and even no subfolders.
+    // All directories can have subfolders, subfolders in subfolders and even no subfolders.
     await client.registerEvents();
     await client.registerComponents();
     await client.registerCommands({
