@@ -22,7 +22,7 @@ export const client: DiscordClient = new DiscordClient({
         // and global commands (deploy: true) can take up to one hour.
         deploy: true
     });
-    // Existing commands can be deleted like this:
+    // Existing commands can be deleted with their id and RegisterType like this:
     // await client.deleteCommand("1239882465229668414", RegisterTypes.Guild)
     // await client.deleteCommands(["1239882465229668414", "1239882465229668414"], RegisterTypes.Guild)
     // await client.deleteAllCommands(RegisterTypes.Guild)
