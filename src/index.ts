@@ -23,8 +23,8 @@ export const client: DiscordClient = new DiscordClient({
         deploy: false
     });
     // Existing commands can be deleted with their id and RegisterType like this:
-    // await client.deleteCommand("1239882465229668414", RegisterTypes.Guild)
-    // await client.deleteCommands(["1239882465229668414", "1239882465229668414"], RegisterTypes.Guild)
+    // await client.deleteCommand("COMMAND_ID", RegisterTypes.Guild)
+    // await client.deleteCommands(["COMMAND_ID", "COMMAND_ID"], RegisterTypes.Guild)
     // await client.deleteAllCommands(RegisterTypes.Guild)
     await client.connect(process.env.CLIENT_TOKEN);
 })();
