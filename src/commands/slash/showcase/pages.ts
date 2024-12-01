@@ -18,7 +18,10 @@ export default new SlashCommand({
         .setTitle('Page 2')
         .setDescription('Here is some more information on **Page 2**.')
         .setColor(Colors.Green),
-      new EmbedBuilder().setTitle('Page 3').setDescription('Finally, this is **Page 3**. Enjoy!').setColor(Colors.Red),
+      new EmbedBuilder()
+        .setTitle('Page 3')
+        .setDescription('Finally, this is **Page 3**. Enjoy!')
+        .setColor(Colors.Red),
     ];
 
     const paginator: EmbedPaginator = new EmbedPaginator({
@@ -27,6 +30,6 @@ export default new SlashCommand({
       autoPageDisplay: true,
     });
 
-    await paginator.send({ interaction });
+    await paginator.send({ context: interaction });
   },
 });

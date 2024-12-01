@@ -4,9 +4,10 @@ import {
   AutocompleteInteraction,
   ButtonBuilder,
   ButtonStyle,
+  CommandInteraction,
   type EmbedBuilder,
-  type Message,
-  type MessageComponentInteraction,
+  Message,
+  MessageComponentInteraction,
   type MessagePayloadOption,
 } from 'discord.js';
 
@@ -23,22 +24,39 @@ export class EmbedPaginator {
   }
 
   async send(options: PaginatorSendOptions): Promise<void> {
-    if (options.interaction instanceof AutocompleteInteraction) return;
+    const { context, ephemeral, followUp, content } = options;
+    if (context instanceof AutocompleteInteraction) return;
 
-    const sendMethod = options.followUp ? 'followUp' : 'reply';
+    const isInteraction: boolean =
+      context instanceof CommandInteraction || context instanceof MessageComponentInteraction;
 
     let messageOptions: MessagePayloadOption = {
-      content: options.content,
-      ephemeral: options.ephemeral ?? false,
+      content,
+      ephemeral: ephemeral ?? false,
       embeds: [this.getPageEmbed()],
       components: [this.createButtonRow()],
       fetchReply: true,
     };
+
     if (!messageOptions.content) delete messageOptions.content;
     if (!messageOptions.embeds) delete messageOptions.embeds;
 
-    const message: Message = (await options.interaction[sendMethod](messageOptions)) as Message;
-    await this.collectButtonInteractions(message);
+    let sentMessage: Message;
+
+    if (isInteraction) {
+      const interaction = context as CommandInteraction | MessageComponentInteraction;
+      const sendMethod = followUp ? 'followUp' : 'reply';
+      sentMessage = (await interaction[sendMethod](messageOptions)) as Message;
+    } else {
+      const message = context as Message;
+      sentMessage = await message.reply({
+        content: messageOptions.content,
+        embeds: messageOptions.embeds,
+        components: messageOptions.components,
+      });
+    }
+
+    await this.collectButtonInteractions(sentMessage);
   }
 
   private getPageEmbed(): EmbedBuilder {

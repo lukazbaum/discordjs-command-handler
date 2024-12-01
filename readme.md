@@ -536,12 +536,12 @@ The `EmbedPaginator` is a powerful utility for displaying paginated embeds with 
 
 ### PaginatorSendOptions
 
-| **Field**     | **Type**      | **Description**                                                                                             |
-|---------------|---------------|-------------------------------------------------------------------------------------------------------------|
-| `interaction` | `Interaction` | The `interaction` instance from the user.                                                                   |
-| `ephemeral?`  | `boolean`     | Whether the paginator message should be ephemeral (only visible to the user who triggered the interaction). |
-| `followUp?`   | `boolean`     | Whether to send the paginator as a follow-up message (useful if replying to an initial interaction).        |
-| `content?`    | `string`      | The content to display alongside the embed in the paginator message.                                        |
+| **Field**    | **Type**                   | **Description**                                                                                             |
+|--------------|----------------------------|-------------------------------------------------------------------------------------------------------------|
+| `context`    | `Interaction` or `Message` | The `interaction` or `message` instance from the command.                                                   |
+| `ephemeral?` | `boolean`                  | Whether the paginator message should be ephemeral (only visible to the user who triggered the interaction). |
+| `followUp?`  | `boolean`                  | Whether to send the paginator as a follow-up message (useful if replying to an initial interaction).        |
+| `content?`   | `string`                   | The content to display alongside the embed in the paginator message.                                        |
 
 
 ### Usage Example:
@@ -566,7 +566,7 @@ const paginator: EmbedPaginator = new EmbedPaginator({
   autoPageDisplay: true,
 });
 
-await paginator.send({ interaction });
+await paginator.send({ context: interaction });
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -610,8 +610,8 @@ await interaction.reply({ content: coloredMessage });
 
 # Roadmap
 
+- [x] Enhance the Embed Paginator to support non-interaction-based commands.
 - [ ] Add a command argument which logs command usage.
-- [ ] Enhance the Embed Paginator to support non-interaction-based commands.
 - [ ] Enhance the Embed Paginator to support custom components.
 - [ ] Increase customization options for denied command responses.
 - [ ] Add command-line tools to quickly create commands, components and events with predefined templates.

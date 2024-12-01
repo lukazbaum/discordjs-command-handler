@@ -1,4 +1,4 @@
-import type { ButtonStyle, EmbedBuilder, Interaction } from 'discord.js';
+import type { ButtonStyle, EmbedBuilder, Interaction, Message } from 'discord.js';
 
 export enum PaginatorButtonType {
   First,
@@ -24,7 +24,7 @@ export interface PaginatorSettings {
 }
 
 export interface PaginatorSendOptions {
-  interaction: Interaction;
+  context: Interaction | Message;
   ephemeral?: boolean;
   followUp?: boolean;
   content?: string;
