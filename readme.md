@@ -23,7 +23,7 @@
     <a href="https://github.com/lukazbaum/discordjs-command-handler?tab=readme-ov-file#documentation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands">View Examples</a>
+    <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src">View Examples</a>
     ·
     <a href="https://github.com/lukazbaum/discordjs-command-handler/issues/new?assignees=&labels=bug&projects=&template=BUG_REPORT.md&title=%5BBUG%5D">Report Bug</a>
     ·
