@@ -3,7 +3,7 @@ import { GatewayIntentBits } from 'discord.js';
 
 const defaultConfig: Config = {
   prefix: '!',
-  ownerId: '712205125158174751',
+  ownerId: 'YOUR_USER_ID',
   eventsFolder: 'events',
   commandsFolder: 'commands',
   componentsFolder: 'components',
