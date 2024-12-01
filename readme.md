@@ -91,14 +91,15 @@ This handler includes everything you need to create a powerful Discord Bot:
 - **Automatic Intents**:
   - No need to manually specify Gateway Intents—the handler determines and applies them automatically.
 
+- **Reloadable Commands, Events, and Components**:
+    - Commands, Events, and Components can be dynamically reloaded or added during runtime without the need for a bot restart.
+
 - **Embed Pagination**:
   - Easy-to-use utilities for creating paginated embeds, perfect for displaying large datasets or navigation.
 
 - **Colored Message Builder**:
   - A customizable message builder to create visually appealing messages.
 
-- **Reloadable Commands, Events, and Components**:
-  - Commands, Events, and Components can be dynamically reloaded or added during runtime without the need for a bot restart.
 
 
 ## Why This Handler?
