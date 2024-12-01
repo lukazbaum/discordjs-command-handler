@@ -1,447 +1,659 @@
-<h1 align="center"><b>Discord Bot Handler</b></h1>
-<p align="center"><b>🚀 Elevate Your Discord Programming Experience with Advanced Features!</b></p>
-<p align="center">
-  Transform your Discord bot development with our advanced handler. It simplifies command management, event handling, and offers robust solutions for seamless bot operations.
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/node-v20.7+-228B22" alt="node - v20.7+">
-  <img src="https://img.shields.io/badge/npm-v10.1+-orange" alt="npm - v10.1+">
-  <img src="https://img.shields.io/badge/discord.js-v14.15.2-5865F2" alt="discord.js - v14.14.1">
-  <img src="https://img.shields.io/badge/Maintenance-Active-green.svg" alt="Maintenance - Active">
-</p>
+<a id="readme-top"></a>
 
-## 🤔 Why?
-- **Focused Development:** Craft your bot with intuitive tools that make development both enjoyable and powerful.
-
-- **Rich Feature Set:** Equipped with a wide range of capabilities, from simple command structures to advanced functionalities.
-
-- **TypeScript Powered:** Leverage TypeScript's robustness for error-free coding and enhanced performance.
-
-- **Scalability Made Simple:** Designed for ease of use by beginners and adaptability for complex projects as you grow.
-
-- **Cutting-Edge Updates:** Stay ahead with regular updates that incorporate the latest features of Discord.js.
-
-- **Community-Driven Potential:** Join a growing platform where contributions from developers are welcomed, paving the way for shared learning and continuous enhancement.
+<!-- PROJECT SHIELDS -->
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 
-## 🌟 Features
-This Discord Bot comes packed with a variety of features designed to enhance your server's functionality and user experience:
 
-- **Command Handling**
-  - Slash Commands
-  - Prefix Commands
-  - Message Commands
-  - Ping Commands
-  - Autocomplete Commands
-  - Context Menus
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/lukazbaum/discordjs-command-handler">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-- **Component Handling**
-  - Buttons
-  - Select Menus
-  - Modals
+<h3 align="center">Discord Bot Handler</h3>
 
-- **Event Handling**
-  - Efficient and easy
+  <p align="center">
+    An awesome Discord Bot Handler with advanced features to jumpstart your projects!
+    <br />
+    <a href="https://github.com/lukazbaum/discordjs-command-handler?tab=readme-ov-file#documentation"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands">View Examples</a>
+    ·
+    <a href="https://github.com/lukazbaum/discordjs-command-handler/issues/new?assignees=&labels=bug&projects=&template=BUG_REPORT.md&title=%5BBUG%5D">Report Bug</a>
+    ·
+    <a href="https://github.com/lukazbaum/discordjs-command-handler/issues/new?assignees=&labels=enhancement&projects=&template=FEATURE_REQUEST.md&title=">Request Feature</a>
+  </p>
+</div>
 
-- **Advanced Options**
-  - Command Cooldowns
-  - Many Command Options
-  - Customizable Config
 
-- **Automatic Intent Handling**
-  - No need to specify Intents yourself
 
-- **Utility Features**
-  - Colored Message Builder
-  - Discord Timestamp Formatter
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#why-this-handler">Why This Handler?</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#documentation">Documentation</a>
+      <ul>
+        <li><a href="#command-arguments">Command Arguments</a></li>
+        <li><a href="#commands">Commands</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#embed-paginator">Embed Paginator</a></li>
+        <li><a href="#colored-message-builder">Colored Message Builder</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-- **And More...**
-  - Continuously updated with new features and enhancements
 
-## 🚀 Getting Started
+
+# About The Project
+
+This Discord Bot Handler is built to simplify the creation of powerful bots while maintaining a clean and organized codebase. With built-in support for modern Discord features like slash commands, buttons, and modals, it eliminates the hassle of handling boilerplate code. Whether you're crafting a small bot for personal use or a large-scale application, this handler lets you focus on adding the features that matter most.
+
+## Features
+
+This handler includes everything you need to create a powerful Discord Bot:
+
+- **Command Handling**:
+  - Support for **Slash Commands**, **Context Menus**, and **Autocomplete**.
+  - Classic **Prefix Commands** for users who prefer traditional interaction.
+  - Advanced argument features, including **cooldowns**, usage restrictions, and more.
+
+- **Component Handling**:
+  - Seamless integration with Discord **Buttons**, **Select Menus**, and **Modals** for interactive component elements.
+
+- **Event Handling**:
+  - Automatically manages event listeners.
+
+- **Automatic Intents**:
+  - No need to manually specify Gateway Intents—the handler determines and applies them automatically.
+
+- **Embed Pagination**:
+  - Easy-to-use utilities for creating paginated embeds, perfect for displaying large datasets or navigation.
+
+- **Colored Message Builder**:
+  - A customizable message builder to create visually appealing messages.
+
+- **Reloadable Commands, Events, and Components**:
+  - Commands, Events, and Components can be dynamically reloaded or added during runtime without the need for a bot restart.
+
+
+## Why This Handler?
+
+- **Simplicity**: Abstracts away the repetitive tasks involved in bot development.
+- **Flexibility**: Designed to support various bot types, from utility-focused to entertainment-driven.
+- **Scalability**: Modular architecture makes it easy to extend and maintain as your bot grows.
+- **Community-Driven**: Contributions and feedback are welcome to help make this the ultimate bot handler.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+# Getting Started
+
 Follow these steps to install and set up the Discord Bot Handler.
 
-### 1. 📋 Prerequisites
+## Prerequisites
+
+This project is optimized for use with [Bun](https://bun.sh), a fast JavaScript runtime. While you can use npm, we highly recommend using Bun for better performance. Starting the bot with Bun can be up to **5 times faster** compared to using npm.
+
 Before you begin, ensure you have the following:
-- Node.js (v20.7 or higher)
-- npm (v10.1 or higher)
-- A Discord Bot Application (see [Discord's developer portal](https://discord.com/developers/applications) to create a bot)
-- Ensure the Discord Bot is configured with the `MESSAGE CONTENT` Privileged Gateway Intent enabled. You can set this in the Bot section under Settings on the [Discord's developer portal](https://discord.com/developers/applications).
-**Note:** If you prefer not to use this intent, you have the option to disable it in the configuration file.
-- Make sure the bot invite link includes the `applications.commands` scope to enable slash commands. Update the link in the OAuth2 section on the [Discord's developer portal](https://discord.com/developers/applications) if needed.
+- **Node.js**
+- A **Discord Bot Application** (see [Discord's developer portal](https://discord.com/developers/applications) to create a bot)
+- Ensure the Discord Bot is configured with the `MESSAGE CONTENT` Privileged Gateway Intent enabled.
+  - You can enable this in the **Bot** section under **Settings** on the [Discord's developer portal](https://discord.com/developers/applications).
+  - **Note:** If you prefer not to use this intent, you can disable it in the project's configuration file.
+- Make sure the bot invite link includes the `applications.commands` scope to enable slash commands. Update the link in the **OAuth2** section on the [Discord's developer portal](https://discord.com/developers/applications) if needed.
 
-### 2. 📥 Cloning the Repository
-Clone the repository using Git:
-```bash
-git clone https://github.com/lukazbaum/discordjs-command-handler
-```
-Alternatively, [download](https://github.com/lukazbaum/discordjs-command-handler/archive/refs/heads/master.zip) it as a ZIP file and extract it.
+### Installing Bun
 
-Navigate to the directory:
-```bash
-cd discord-bot-handler
-```
+To install Bun, run the following command in your terminal:
 
-### 3. 🔧 Installing Dependencies
-Install the necessary Node.js packages:
-```bash
-npm install 
-# or
-yarn install
-```
-
-### 4. ⚙️ Configuration
-Rename `.env.example` to `.env` in your project root and fill in your details:
-
-The `CLIENT_ID` can be found in your Bot Application under OAuth2.
-```text
-CLIENT_TOKEN=your_discord_bot_token
-CLIENT_ID=your_discord_client_id
-GUILD_ID=your_discord_guild_id
-```
-
-When using Linux as operating system change this line in the `package.json` file:
-```json
-"compile": "npm run clean-windows && tsc",
-```
-to this
-```json
-"compile": "npm run clean-linux && tsc",
-```
-
-### 5. 🤖 Running the Bot
-Use the following commands to compile and start your bot:
-
-- Compile the Typescript project:
-  ```bash
-  npm run compile
-  # or
-  yarn run compile
-  ```
-- Start the compiled code:
-  ```bash
-  npm run start
-  # or
-  yarn run start
-  ```
-- Alternatively, run both compile and start with a single command:
-  ```bash
-  npm run cs
-  # or
-  yarn run cs
+```sh
+  # Windows:
+  powershell -c "irm bun.sh/install.ps1 | iex"
+  
+  # Linux:
+  curl -fsSL https://bun.sh/install | bash
   ```
 
-## 📚 Documentation
+### Alternatively, with npm
+If you prefer to use npm or something else, ensure it’s up-to-date:
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+## Installation
+
+1. Clone the repository
+   ```sh
+   git clone https://github.com/lukazbaum/discordjs-command-handler
+   ```
+2. Install dependencies
+   ```sh
+   bun install
+   # or
+   npm install
+   ```
+3. Configure environment variables
+
+   Rename `.env.example` to `.env` in the project root and fill in your bot's details:
+   ```env
+   CLIENT_TOKEN=your_discord_bot_token
+   CLIENT_ID=your_discord_client_id
+   GUILD_ID=your_discord_guild_id
+   ```
+   Additionally, set your **Discord ID** (`ownerId`) in the config file to ensure that owner-specific commands work correctly.
+4. Run the bot
+   ```sh
+   bun start
+   # or
+   npm run start:node
+   ```
+5. Build the bot (optional)
+
+   To build the bot for production:
+    ```sh
+   bun build
+   # or
+   npm run build
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+# Documentation
+
 Explore the documentation for in-depth insights on using and optimizing the Discord Bot Handler in your projects.
 
-### 🛠️ Command Arguments
-Command arguments are optional settings that can be applied to each command to control its behavior. These settings allow for flexible command management, including permissions and usage restrictions. Here are the base command arguments you can use:
+## Command Arguments
+The following table explains the optional configuration arguments available for commands in your bot. Examples of how to use these arguments can be found within the bot's codebase.
 
-- `cooldown?`: Number of seconds to wait before the command can be used again. Defaults to no cooldown if not specified.
-- `ownerOnly?`: If true, only the bot owner (as defined in the config) can use the command.
-- `userWhitelist?`: Array of user IDs allowed to use the command. An empty array means no restrictions.
-- `userBlacklist?`: Array of user IDs prohibited from using the command.
-- `channelWhitelist?`: Array of channel IDs where the command can be used.
-- `channelBlacklist?`: Array of channel IDs where the command cannot be used.
-- `categoryWhitelist?`: Array of category IDs where the command can be used.
-- `categoryBlacklist?`: Array of category IDs where the command cannot be used.
-- `guildWhitelist?`: Array of guild IDs where the command can be used.
-- `guildBlacklist?`: Array of guild IDs where the command cannot be used.
-- `roleWhitelist?`: Array of role IDs allowed to use the command.
-- `roleBlacklist?`: Array of role IDs prohibited from using the command.
-- `optionalUserWhitelist?`: Array of user IDs optionally allowed to use the command.¹
-- `optionalChannelWhitelist?`: Array of channel IDs optionally allowed to use the command.¹
-- `optionalCategoryWhitelist?`: Array of category IDs optionally allowed to use the command.¹
-- `optionalGuildWhitelist?`: Array of guild IDs optionally allowed to use the command.¹
-- `optionalRoleWhitelist?`: Array of role IDs optionally allowed to use the command.¹
-- `nsfw?`: If true, the command can only be used in age-restricted (NSFW) channels.
-- `disabled?`: If true, the command won't be registered and thus, will be unavailable for use.
+| **Argument**                 | **Type**   | **Description**                                                                                    |
+|------------------------------|------------|----------------------------------------------------------------------------------------------------|
+| `userCooldown?`              | `number`   | Cooldown (in seconds) for each user.                                                               |
+| `guildCooldown?`             | `number`   | Cooldown (in seconds) for all users in a guild.                                                    |
+| `globalCooldown?`            | `number`   | Cooldown (in seconds) for all users globally.                                                      |
+| `allowedUsers?`              | `string[]` | List of user IDs explicitly allowed to use the command.                                            |
+| `blockedUsers?`              | `string[]` | List of user IDs explicitly blocked from using the command.                                        |
+| `optionalAllowedUsers?`      | `string[]` | List of optional user IDs where the command is conditionally allowed.¹                             |
+| `allowedChannels?`           | `string[]` | List of channel IDs where the command is allowed.                                                  |
+| `blockedChannels?`           | `string[]` | List of channel IDs where the command is blocked.                                                  |
+| `optionalAllowedChannels?`   | `string[]` | List of optional channel IDs where the command is conditionally allowed.¹                          |
+| `allowedCategories?`         | `string[]` | List of category IDs where the command is allowed.                                                 |
+| `blockedCategories?`         | `string[]` | List of category IDs where the command is blocked.                                                 |
+| `optionalAllowedCategories?` | `string[]` | List of optional category IDs where the command is conditionally allowed.¹                         |
+| `allowedGuilds?`             | `string[]` | List of guild IDs where the command is allowed.                                                    |
+| `blockedGuilds?`             | `string[]` | List of guild IDs where the command is blocked.                                                    |
+| `optionalAllowedGuilds?`     | `string[]` | List of optional guild IDs where the command is conditionally allowed.¹                            |
+| `allowedRoles?`              | `string[]` | List of role IDs that can use the command.                                                         |
+| `blockedRoles?`              | `string[]` | List of role IDs that are blocked from using the command.                                          |
+| `optionalAllowedRoles?`      | `string[]` | List of optional role IDs where the command is conditionally allowed.¹                             |
+| `restrictedToOwner?`         | `boolean`  | Restricts the command to the bot owner only.                                                       |
+| `restrictedToNSFW?`          | `boolean`  | Restricts the command to NSFW channels only.                                                       |
+| `isDisabled?`                | `boolean`  | Disables the command entirely, making it unavailable for use.                                      |
+| `aliases?`                   | `string[]` | List of alternate names for the command that can be used to invoke it. *(Only for PrefixCommands)* |
 
-¹ **Note on Optional Whitelists**:
-When using optional whitelists, the command will be allowed to execute if any one of the optional whitelist conditions is met.
+**¹Note on Optional Whitelists**: When using optional whitelists, the command will be allowed to execute if any one of the optional whitelist conditions is met.
 
-#### 🛠️ Example Usage:
-```typescript
-export = {
-    cooldown: 10,
-    ownerOnly: false,
-    channelWhitelist: ["123456789012345678", "987654321098765432"]
-    // ... other arguments
-} as SlashCommandModule;
-```
 
-### ⚔️ Slash Commands
-Below is an example of a typical Slash Command module:
+## Commands
 
-```typescript
-interface SlashCommandModule {
-  type: CommandTypes.SlashCommand;
-  register: RegisterTypes;
-  data: SlashCommandBuilder;
-  execute: (...args: any[]) => Promise<void>;
-  autocomplete?: (interaction: AutocompleteInteraction) => Promise<void>;
-}
-```
+This bot supports several types of commands, including Slash Commands, Context Menus, Prefix Commands, and Autocomplete Commands.
 
-- `type: CommandTypes.Slashcommand`: Identifies the command as a slash command.
-- `register: RegisterTypes`: Determines where the command should be registered. Use `.Guild` for server-specific commands or `.Global` for commands available across all servers where the bot is present.
-- `data: SlashcommandBuilder`: Defines the command's details, including name, description, and options. You can also set permissions required to use the command here.
-- `execute: (interaction: CommandInteraction) => Promise<void>`: The function that will be executed when the Slash Command is triggered.
-- `autocomplete?: (interaction: AutocompleteInteraction) => Promise<void>`: A function for handling autocomplete interactions.
+<details>
+<summary><b>Slash Commands</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/slash">commands/slash</a>
 
-#### ⚔️ Example Slash Command:
-Here's a practical example of a Slash Command:
+```ts
+export default new SlashCommand({
+  registerType: RegisterType.Guild,
 
-```typescript
-export = {
-  type: CommandTypes.SlashCommand,
-  register: RegisterTypes.Guild,
   data: new SlashCommandBuilder()
-          .setName("ping")
-          .setDescription("Replies with pong!")
-          .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages),
-  async execute(interaction: CommandInteraction): Promise<void> {
-    await interaction.reply({ content: "Pong" });
-  }
-} as SlashCommandModule;
-```
+    .setName('ping')
+    .setDescription('Replies with pong!'),
 
-### 🔧 Prefix/Ping/Message Commands
-Prefix, Ping and Message Commands follow the same structure. Below is an example of a typical Prefix Command module:
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    await interaction.reply({ content: "Pong!" });
+  },
+});
+  ```
+- **`registerType: RegisterType`**  
+  Specifies where the command should be registered:
+  - **`.Guild`**: Registers the command for a specific server (guild).
+  - **`.Global`**: Registers the command for all servers where the bot is present.
+</details> 
 
-```typescript
-interface PrefixCommandModule {
-  name: string;
-  aliases?: string[];
-  permissions?: string[];
-  type: CommandTypes.PrefixCommand;
-  execute: (message: Message) => Promise<void>;
-}
-```
+<details>
+<summary><b>Context Menus</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/context">commands/context</a>
 
-- `name`: Specifies the unique name of the command.
-- `aliases?`: An array of alternative names for the command. Use these to provide users with flexibility in invoking the command.
-- `permissions?`: An array of required permissions for using the command. Define the necessary permissions to control access to the command.
-- `type: CommandTypes.PrefixCommand`: Identifies the command as a prefix command (`.PingCommand` or `.MessageCommand`).
-- `execute: (message: Message) => Promise<void>`: The function that will be executed when the Command is triggered.
+```ts
+export default new ContextMenu({
+  registerType: RegisterType.Guild,
 
-#### 🔧 Example Prefix Command:
-Here's a practical example of a Prefix Command:
-
-```typescript
-export = {
-  name: "pong",
-  aliases: ["poong"],
-  type: CommandTypes.PrefixCommand,
-  async execute(message: Message): Promise<void> {
-    await message.reply("Ping!");
-  }
-} as PrefixCommandModule;
-```
-
-### 📑 Context Menus
-Context Menus in Discord bots allow users to interact with your bot through right-click context options in the Discord interface. Just like with other commands, standard command arguments can be applied to Context Menus for added flexibility and control. Here is a typical structure of a Context Menu module:
-
-```typescript
-interface ContextMenuCommandModule {
-  type: CommandTypes.ContextMenu;
-  register: RegisterTypes;
-  data: ContextMenuCommandBuilder;
-  execute: (interaction: ContextMenuCommandInteraction) => Promise<void>;
-}
-```
-- `register: RegisterTypes`: Determines where the command should be registered. Use `.Guild` for server-specific commands or `.Global` for commands available across all servers where the bot is present.
-- `type: CommandTypes.ContextMenu`: Identifies the command as a context menu.
-- `data: ContextMenuCommandBuilder`: Defines the command's details, including name, description, and options. You can also set permissions required to use the command here.
-- `execute: (interaction: ContextMenuCommandInteraction) => Promise<void>`: The function that will be executed when the Context Menu is triggered.
-
-#### 📑 Example Context Menu:
-Here's a practical example of a Context Menu:
-
-```typescript
-export = {
-  type: CommandTypes.ContextMenu,
-  register: RegisterTypes.Guild,
   data: new ContextMenuCommandBuilder()
-          .setName("Get Message ID")
-          .setType(ApplicationCommandType.Message),
+    .setName('Get Message ID')
+    .setType(ApplicationCommandType.Message as ContextMenuCommandType),
+
   async execute(interaction: ContextMenuCommandInteraction): Promise<void> {
-    await interaction.reply({ content: `Message ID: ${interaction.targetId}` });
-  }
-} as ContextMenuCommandModule;
+    await interaction.reply({ content: `Message ID: ${interaction.targetId}`, ephemeral: true });
+  },
+});
+  ```
+- **`registerType: RegisterType`**  
+  Specifies where the command should be registered:
+  - **`.Guild`**: Registers the command for a specific server (guild).
+  - **`.Global`**: Registers the command for all servers where the bot is present.
+</details>
+
+<details>
+<summary><b>Prefix Commands</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/prefix">commands/prefix</a>
+
+```ts
+export default new PrefixCommand({
+  name: 'ping',
+  aliases: ['peng'],
+  userCooldown: 10,
+
+  async execute(message: Message): Promise<any> {
+    await message.reply('Pong!');
+  },
+});
+  ```
+</details>
+
+<details>
+<summary><b>Autocomplete Commands</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/slash/showcase/autocomplete.ts">commands/slash/showcase/autocomplete.ts</a>
+
+```ts
+export default new SlashCommand({
+  registerType: RegisterType.Guild,
+  
+  data: new SlashCommandBuilder()
+    .setName('autocomplete')
+    .setDescription('Explore the autocomplete feature!')
+    .addStringOption((option) =>
+      option
+        .setName('topic')
+        .setDescription('Choose a topic from the suggestions')
+        .setAutocomplete(true)
+        .setRequired(true),
+    ),
+
+  async autocomplete(interaction: AutocompleteInteraction): Promise<void> {
+    const focusedValue: string = interaction.options.getFocused().toLowerCase();
+    const choices: string[] = [
+      'Getting Started with Discord.js',
+      'Building Slash Commands',
+      'Understanding Permissions',
+      'Working with Autocomplete',
+      'Creating Buttons and Select Menus',
+      'Error Handling in Discord Bots',
+    ];
+
+    const filtered: string[] = choices.filter((choice) => choice.toLowerCase().includes(focusedValue));
+    await interaction.respond(filtered.map((choice) => ({ name: choice, value: choice })));
+  },
+
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    const selectedTopic: string = interaction.options.getString('topic', true);
+    await interaction.reply({
+      content: `You selected: **${selectedTopic}**`,
+    });
+  },
+});
+  ```
+- **`registerType: RegisterType`**  
+  Specifies where the command should be registered:
+  - **`.Guild`**: Registers the command for a specific server (guild).
+  - **`.Global`**: Registers the command for all servers where the bot is present.
+</details> 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Components
+
+This bot supports all types of components, including Buttons, Select Menus, and Modals.
+
+### Component Arguments
+
+| Property    | Type      | Description                                  |
+|-------------|-----------|----------------------------------------------|
+| `customId`  | `string`  | A unique identifier for the component.       |
+| `disabled?` | `boolean` | Indicates whether the component is disabled. |
+
+### Unique IDs
+
+Unique IDs allow for more dynamic interaction handling by appending specific identifiers to the `customId` of a component. These IDs are separated from the base identifier by a colon (`:`).
+
+#### Creating a Button with a Unique ID
+```ts
+.setCustomId('buttons:confirm')
 ```
 
-### 🗃️ Components
-On Discord, Components are interactive elements like buttons, select menus, and modals that enhance user interaction. These can be implemented individually or grouped for complex interactions. Below is a typical structure of a Component module:
-
-```typescript
-interface ComponentModule {
-  id?: string;
-  group?: string;
-  type: ComponentTypes;
-  execute: (interaction: any) => Promise<void>;
+#### Handling the Button in the Component File
+```ts
+async execute(interaction: ButtonInteraction, uniqueId: string | null): Promise<void> {
+  await interaction.reply({
+    content: `You have pressed the **${uniqueId}** button.`,
+    ephemeral: true,
+  });
 }
 ```
-- `id?`: Specifies a unique identifier (customId) for the component.
-- `group?`: Defines the group to which the component belongs, aiding in group handling.
-- `type: ComponentTypes`:  Identifies the type of the component (Button, SelectMenu, Modal).
-- `execute: (interaction: any) => Promise<void>`: The function that will be executed when a user interacts with the component.
 
-#### 🗃️ Example using ids:
+In this example
+- `buttons` is the base identifier (`customId`) used to recognize the component.
+- `confirm` is the unique identifier (`uniqueId`) that provides additional context or differentiation for the interaction.
 
-**Creating and sending a button:**
+If no unique ID is required, you can use just the base identifier, such as `buttons`.
 
-This example creates a button with a specific id for distinct handling.
 
-```typescript
-const row: any = new ActionRowBuilder()
-        .addComponents(
-                new ButtonBuilder()
-                        .setCustomId("deleteMessage")
-                        .setLabel("Delete message")
-                        .setStyle(ButtonStyle.Danger)
-        );
-await interaction.reply({ content: "Example", components: [row] });
+### Component Examples
+
+<details>
+<summary><b>Buttons</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/components/buttons/buttons.ts">components/buttons/buttons.ts</a>
+
+#### Creating the Buttons
+```ts
+const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
+  new ButtonBuilder()
+    .setCustomId('buttons:confirm')
+    .setLabel('Confirm')
+    .setStyle(ButtonStyle.Success),
+  new ButtonBuilder()
+    .setCustomId('buttons:cancel')
+    .setLabel('Cancel')
+    .setStyle(ButtonStyle.Secondary),
+  new ButtonBuilder()
+    .setCustomId('buttons:info')
+    .setLabel('More Info')
+    .setStyle(ButtonStyle.Primary),
+);
+  ```
+
+#### Handling the Buttons
+```ts
+export default new Button({
+  customId: 'buttons',
+
+  async execute(interaction: ButtonInteraction, uniqueId: string | null): Promise<void> {
+    await interaction.reply({
+      content: `You have pressed the **${uniqueId}** button.`,
+      ephemeral: true,
+    });
+  },
+});
+```
+</details> 
+
+<details>
+<summary><b>Select Menus</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/components/selectMenus/select.ts">components/selectMenus/select.ts</a>
+
+#### Creating the Select Menu
+```ts
+const menu: StringSelectMenuBuilder = new StringSelectMenuBuilder()
+  .setCustomId('selectMenu')
+  .setPlaceholder('Choose wisely...')
+  .setMinValues(1)
+  .setMaxValues(1)
+  .addOptions(
+    {
+      label: 'Cats',
+      description: 'Choose this if you like cats',
+      value: 'cats',
+      emoji: '🐱',
+    },
+    {
+      label: 'Dogs',
+      description: 'Choose this if you like dogs',
+      value: 'dogs',
+      emoji: '🐶',
+    },
+    {
+      label: 'Birds',
+      description: 'Choose this if you like birds',
+      value: 'birds',
+      emoji: '🐦',
+    },
+  );
+  ```
+
+#### Handling the Select Menu
+```ts
+export default new SelectMenu({
+  customId: 'selectMenu',
+
+  async execute(interaction: AnySelectMenuInteraction, values: string[], uniqueIds: (string | null)[]): Promise<void> {
+    const choice: string = values[0];
+
+    const responses: Record<string, string> = {
+      cats: 'You chose cats! 🐱',
+      dogs: 'You chose dogs! 🐶',
+      birds: 'You chose birds! 🐦',
+    };
+
+    await interaction.reply({ content: responses[choice] });
+  },
+});
+```
+</details> 
+
+<details>
+<summary><b>Modals</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/components/modals/askModal.ts">components/modals/askModal.ts</a>
+
+#### Creating the Modal
+```ts
+const modal: ModalBuilder = new ModalBuilder()
+  .setCustomId('askModal')
+  .setTitle('Tell us about yourself!');
+
+const colorInput: TextInputBuilder = new TextInputBuilder()
+  .setCustomId('favoriteColor')
+  .setLabel("What's your favorite color?")
+  .setPlaceholder('e.g., Blue')
+  .setStyle(TextInputStyle.Short);
+
+const hobbiesInput: TextInputBuilder = new TextInputBuilder()
+  .setCustomId('hobbies')
+  .setLabel("What's one of your favorite hobbies?")
+  .setPlaceholder('e.g., Reading books')
+  .setStyle(TextInputStyle.Paragraph);
+
+const colorRow = new ActionRowBuilder<TextInputBuilder>().addComponents(colorInput);
+const hobbiesRow = new ActionRowBuilder<TextInputBuilder>().addComponents(hobbiesInput);
+
+modal.addComponents(colorRow, hobbiesRow);
+  ```
+
+#### Handling the Modal
+```ts
+export default new Modal({
+  customId: 'askModal',
+
+  async execute(interaction: ModalSubmitInteraction, fields: ModalSubmitFields): Promise<void> {
+    const favoriteColor: string = fields.getTextInputValue('favoriteColor');
+    const hobbies: string = fields.getTextInputValue('hobbies');
+
+    await interaction.reply({
+      content: `Your favorite color is **${favoriteColor}** and you enjoy **${hobbies}**!`,
+      ephemeral: true,
+    });
+  },
+});
+```
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Embed Paginator
+
+The `EmbedPaginator` is a powerful utility for displaying paginated embeds with interactive buttons for navigating between pages. This is particularly useful for large sets of data or information, allowing users to browse through pages of content easily.
+
+### Paginator Settings
+
+| **Field**                  | **Type**          | **Description**                                                                      |
+|----------------------------|-------------------|--------------------------------------------------------------------------------------|
+| `pages`                    | `EmbedBuilder[]`  | An array of `EmbedBuilder` instances representing the pages of content to paginate.  |
+| `timeout`                  | `number`          | The time (in seconds) before the paginator buttons become inactive.                  |
+| `buttons?`                 | `ButtonPartial[]` | Custom settings for paginator buttons. Defines button type, label, style, and emoji. |
+| `showButtonsAfterTimeout?` | `boolean`         | Whether to keep the paginator buttons visible after the timeout period.              |
+| `hideFirstLastButtons?`    | `boolean`         | Whether to hide the "First" and "Last" buttons in the paginator.                     |
+| `loopPages?`               | `boolean`         | Whether to loop back to the first page after the last page is reached.               |
+| `autoPageDisplay?`         | `boolean`         | Whether to display the current page number in the footer of the embed.               |
+| `restrictToAuthor?`        | `boolean`         | Restricts interactions to the user who triggered the paginator. Default is `true`.   |
+
+**ButtonPartial:**
+- `type`: Specifies the type of the button (`PaginatorButtonType`).
+- `label?`: The label of the button.
+- `style?`: The style of the button (`ButtonStyle`).
+- `emoji?`: The emoji to display on the button.
+
+### PaginatorSendOptions
+
+| **Field**     | **Type**      | **Description**                                                                                             |
+|---------------|---------------|-------------------------------------------------------------------------------------------------------------|
+| `interaction` | `Interaction` | The `interaction` instance from the user.                                                                   |
+| `ephemeral?`  | `boolean`     | Whether the paginator message should be ephemeral (only visible to the user who triggered the interaction). |
+| `followUp?`   | `boolean`     | Whether to send the paginator as a follow-up message (useful if replying to an initial interaction).        |
+| `content?`    | `string`      | The content to display alongside the embed in the paginator message.                                        |
+
+
+### Usage Example:
+```ts
+const pages: EmbedBuilder[] = [
+  new EmbedBuilder()
+    .setTitle('Welcome to the Paginator')
+    .setDescription('This is **Page 1** of the paginator.')
+    .setColor(Colors.Blue),
+  new EmbedBuilder()
+    .setTitle('Page 2')
+    .setDescription('Here is some more information on **Page 2**.')
+    .setColor(Colors.Green),
+  new EmbedBuilder().setTitle('Page 3')
+    .setDescription('Finally, this is **Page 3**. Enjoy!')
+    .setColor(Colors.Red),
+];
+
+const paginator: EmbedPaginator = new EmbedPaginator({
+  pages,
+  timeout: 60,
+  autoPageDisplay: true,
+});
+
+await paginator.send({ interaction });
 ```
 
-**Handling the button interaction:**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The following code handles the interaction for the previously created button.
-```typescript
-export = {
-  id: "deleteMessage",
-  type: ComponentTypes.Button,
-  async execute(interaction: ButtonInteraction): Promise<void> {
-    await interaction.message.delete();
-  }
-} as ComponentModule;
+## Colored Message Builder
+
+The `ColoredMessageBuilder` is designed to enhance the visual appeal of your Discord bot's messages. It allows for various text formatting options, including text color, background color, and styling.
+
+### Example Usage:
+```ts
+const coloredMessage: string = new ColoredMessageBuilder()
+  .add('Welcome to the ', Color.Green)
+  .add('Color Showcase!', Color.Blue, BackgroundColor.Orange, Format.Bold)
+  .addNewLine()
+  .add('This text is ', Color.Red)
+  .add('red ', Color.Red, BackgroundColor.None, Format.Bold)
+  .add('with an underline.', Color.Gray, BackgroundColor.None, Format.Underline)
+  .addNewLine()
+  .add('Let’s ', Color.White)
+  .add('explore ', Color.Cyan, BackgroundColor.None, Format.Bold)
+  .add('a ', Color.Yellow)
+  .addRainbow('rainbow ')
+  .add('effect: ', Color.Pink)
+  .addRainbow('rainboooooooow!', Format.Normal)
+  .addNewLine()
+  .add('Thanks for using the command!', Color.Cyan, BackgroundColor.MarbleBlue, Format.Bold)
+  .build();
+
+await interaction.reply({ content: coloredMessage });
 ```
 
-#### 🗃️ Example using groups:
+### Output:
 
-**Creating and sending grouped buttons:**
+<div align="center">
+    <img src="images/colors.png" alt="Logo" width="404" height="76">
+</div>
 
-For buttons that are part of a group, the group name is prepended to the customId for easy identification and handling.
-```typescript
-const row: any = new ActionRowBuilder()
-        .addComponents(
-                new ButtonBuilder()
-                        .setCustomId("group=subscription;confirm")
-                        .setLabel("Click to confirm")
-                        .setStyle(ButtonStyle.Success),
-                new ButtonBuilder()
-                        .setCustomId("group=subscription;cancel")
-                        .setLabel("Click to cancel")
-                        .setStyle(ButtonStyle.Secondary)
-        );
-await interaction.reply({ content: "Example", components: [row] });
-```
-
-**Handling grouped button interactions::**
-
-This example shows how to handle interactions for buttons that are part of a group.
-```typescript
-export = {
-  group: "subscription",
-  type: ComponentTypes.Button,
-  async execute(interaction: ButtonInteraction): Promise<void> {
-    if (interaction.customId === "confirm") {
-      await interaction.reply({ content: "Pressed confirm" });
-    } else if (interaction.customId === "cancel") {
-      await interaction.reply({ content: "Pressed cancel" });
-    }
-  }
-} as ComponentModule;
-```
-This approach allows for more organized and scalable interaction handling, especially when dealing with multiple components grouped under a single category or function.
-
-The examples provided for handling button interactions are also applicable to select menus and modals, which can be found in the code.
-
-### 🎉 Events
-Below is an example of a typical Event module:
-
-```typescript
-interface EventModule {
-  name: Events;
-  once?: boolean;
-  execute: (...args: any[]) => Promise<void>;
-}
-```
-- `name: Events`: Specifies the type of event to handle, as defined in the `Events` enum.
-- `once?`: If set to true, the event will be executed only once.
-- `execute: (...args: any[]) => Promise<void>`: The function that will be executed when the specified event occurs.
-
-#### 🎉 Example Event:
-Here's an example handling the `ClientReady` event:
-
-```typescript
-export = {
-  name: Events.ClientReady,
-  once: true,
-  async execute(client: DiscordClient): Promise<void> {
-    if (!client.user) return;
-
-    client.user.setStatus(UserStatus.ONLINE);
-    client.user.setActivity("Development", { type: ActivityType.Watching });
-    Logger.log(`Ready! Logged in as ${client.user.tag}`);
-  }
-} as EventModule;
-```
-
-### 🌈 Colored Message Builder
-The `ColoredMessageBuilder` class is designed to enhance the visual appeal of your Discord bot's messages. It allows for various text formatting options, including text color, background color, and styling. This feature can be particularly useful for highlighting important information or making responses more engaging.
-
-#### 🌈 Example usage:
-
-```typescript
-const msg: string = new ColoredMessageBuilder()
-        .add("Hello, ", Color.Red)
-        .add("World!", Color.Blue, BackgroundColor.DarkBlue, Format.Underline)
-        .addNewLine()
-        .addRainbow("This is cool!", Format.Bold)
-        .build();
-```
-
-Alternatively, for simpler text formatting needs, you can use the `colored` or `rainbow` functions:
-
-```typescript
-const simpleColoredMsg = colored("Simple Colored Message", Color.GREEN);
-const simpleRainbowMsg = rainbow("Simple Rainbow Message");
-```
-
-### 🔨 Utility
-The `formatTimestamp` function simplifies timestamp formatting for Discord, ensuring 
-a user-friendly display of time in your bot's messages. All possible format styles are
-supported and can be found in the source code.
-
-#### 🔨 Example usage:
-```typescript
-const discordTimestamp = formatTimestamp(unixTimestamp, TimestampStyle.ShortDate);
-```
-**Output:** `01/23/2024`
-
-## 📝 License
-This project is licensed under the [MIT] License, chosen for its permissive nature, allowing developers to freely use, modify, and distribute the code.
-See the [LICENSE](LICENSE) file for details.
-
-## 👥 Contributing
-Contributions & Issues are welcome! Please follow our [Contribution Guidelines](.github/CONTRIBUTING.md).
-
-## 📜 Code of Conduct
-For a detailed understanding of our community's values and standards, please refer to our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
-We are committed to building a welcoming, inclusive, and respectful community.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## ✨ Showcase Your Project
-Are you using our handler in your open-source bot? We'd love to feature it!
-Let's highlight the fantastic work you've achieved with our Discord Bot Handler.
 
-To share your project details, connect with us on [Discord](https://discord.com/users/lukasbaum). We're excited to showcase your
-creation to the community.
+# Roadmap
 
-## ❤️ Show Your Support
-If you find the Discord Bot Handler useful, please consider giving it a star on GitHub. This not only
-helps us understand which projects the community values, but also increases the visibility of our
-work. Your support means a lot!
+- [ ] Add a command argument which logs command usage.
+- [ ] Enhance the Embed Paginator to support non-interaction-based commands.
+- [ ] Enhance the Embed Paginator to support custom components.
+- [ ] Increase customization options for denied command responses.
+- [ ] Add command-line tools to quickly create commands, components and events with predefined templates.
+- [ ] Implement a plugin system, enabling features like a ticket system to be seamlessly integrated into the project with a single line of code.
 
-🌟 Star us on GitHub — it helps!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+# Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+# License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS -->
+[forks-shield]: https://img.shields.io/github/forks/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
+[forks-url]: https://github.com/lukazbaum/discordjs-command-handler/network/members
+[stars-shield]: https://img.shields.io/github/stars/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
+[stars-url]: https://github.com/lukazbaum/discordjs-command-handler/stargazers
+[issues-shield]: https://img.shields.io/github/issues/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
+[issues-url]: https://github.com/lukazbaum/discordjs-command-handler/issues
+[license-shield]: https://img.shields.io/github/license/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
+[license-url]: https://github.com/lukazbaum/discordjs-command-handler/blob/master/LICENSE.txt
+
+<!-- Thanks to othneildrew for this amazing template (https://github.com/othneildrew/Best-README-Template) -->

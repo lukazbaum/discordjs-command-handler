@@ -1,16 +1,11 @@
-import Logger from "../handler/util/Logger";
-import { Events, ActivityType } from "discord.js";
-import { EventModule, UserStatus } from "../handler";
-import { DiscordClient } from "../handler/util/DiscordClient";
+import { ActivityType, Events, PresenceUpdateStatus } from 'discord.js';
+import { Event, ExtendedClient } from '../handler';
 
-export = {
-    name: Events.ClientReady,
-    once: true,
-    async execute(client: DiscordClient): Promise<void> {
-        if (!client.user) return;
-
-        client.user.setStatus(UserStatus.Online);
-        client.user.setActivity("Development", { type: ActivityType.Watching });
-        Logger.log(`Ready! Logged in as ${client.user.tag}`);
-    }
-} as EventModule;
+export default new Event({
+  name: Events.ClientReady,
+  once: true,
+  async execute(client: ExtendedClient): Promise<void> {
+    client.user?.setStatus(PresenceUpdateStatus.Online);
+    client.user?.setActivity('Development', { type: ActivityType.Watching });
+  },
+});

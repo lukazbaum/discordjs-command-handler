@@ -10,10 +10,10 @@ export default new ContextMenu({
   registerType: RegisterType.Guild,
 
   data: new ContextMenuCommandBuilder()
-    .setName('Get Message ID')
-    .setType(ApplicationCommandType.Message as ContextMenuCommandType),
+    .setName('Get User ID')
+    .setType(ApplicationCommandType.User as ContextMenuCommandType),
 
   async execute(interaction: ContextMenuCommandInteraction): Promise<void> {
-    await interaction.reply({ content: `Message ID: ${interaction.targetId}`, ephemeral: true });
+    await interaction.reply({ content: `User ID: ${interaction.targetId}`, ephemeral: true });
   },
 });

@@ -1,26 +1,28 @@
 {
   "name": "discordjs-command-handler",
-  "version": "1.0.0",
-  "description": "A comprehensive TypeScript command handler for Discord.js, featuring slash commands, prefix commands, message events, automatic intents, and more.",
-  "main": "src/index.ts",
-  "scripts": {
-    "clean-windows": "if exist dist rd /s /q dist",
-    "clean-linux": "rm -rf dist",
-    "compile": "npm run clean-windows && tsc",
-    "start": "node dist/index.js",
-    "watch": "tsc -w",
-    "cs": "npm run compile && npm run start"
-  },
-  "keywords": [],
+  "version": "3.0.0",
+  "description": "A feature-rich Discord Bot Handler designed to simplify bot development with support for commands, components, events, and modern Discord features.",
   "author": "Lukas Baum",
   "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "start:node": "ts-node src/index.ts --incremental",
+    "start:build": "node dist/index.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "tsc"
+  },
   "devDependencies": {
-    "@types/node": "^20.12.12",
-    "typescript": "^5.4.5"
+    "@types/bun": "latest",
+    "@types/node": "^22.10.1",
+    "prettier": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "discord.js": "^14.15.2",
+    "bufferutil": "^4.0.8",
+    "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
-    "glob": "^10.3.15"
+    "utf-8-validate": "^6.0.5"
   }
 }
