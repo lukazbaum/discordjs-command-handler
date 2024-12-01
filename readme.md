@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/lukazbaum/discordjs-command-handler">
+  <a href="https://github.com/lukazbaum/discord-bot-handler">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     An awesome Discord Bot Handler with advanced features to jumpstart your projects!
     <br />
-    <a href="https://github.com/lukazbaum/discordjs-command-handler?tab=readme-ov-file#documentation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/lukazbaum/discord-bot-handler?tab=readme-ov-file#documentation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src">View Examples</a>
+    <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src">View Examples</a>
     ·
-    <a href="https://github.com/lukazbaum/discordjs-command-handler/issues/new?assignees=&labels=bug&projects=&template=BUG_REPORT.md&title=%5BBUG%5D">Report Bug</a>
+    <a href="https://github.com/lukazbaum/discord-bot-handler/issues/new?assignees=&labels=bug&projects=&template=BUG_REPORT.md&title=%5BBUG%5D">Report Bug</a>
     ·
-    <a href="https://github.com/lukazbaum/discordjs-command-handler/issues/new?assignees=&labels=enhancement&projects=&template=FEATURE_REQUEST.md&title=">Request Feature</a>
+    <a href="https://github.com/lukazbaum/discord-bot-handler/issues/new?assignees=&labels=enhancement&projects=&template=FEATURE_REQUEST.md&title=">Request Feature</a>
   </p>
 </div>
 
@@ -154,7 +154,7 @@ If you prefer to use npm or something else, ensure it’s up-to-date:
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/lukazbaum/discordjs-command-handler
+   git clone https://github.com/lukazbaum/discord-bot-handler
    ```
 2. Install dependencies
    ```sh
@@ -230,7 +230,7 @@ The following table explains the optional configuration arguments available for 
 This bot supports several types of commands, including Slash Commands, Context Menus, Prefix Commands, and Autocomplete Commands.
 
 <details>
-<summary><b>Slash Commands</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/slash">commands/slash</a>
+<summary><b>Slash Commands</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/commands/slash">commands/slash</a>
 
 ```ts
 export default new SlashCommand({
@@ -252,7 +252,7 @@ export default new SlashCommand({
 </details> 
 
 <details>
-<summary><b>Context Menus</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/context">commands/context</a>
+<summary><b>Context Menus</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/commands/context">commands/context</a>
 
 ```ts
 export default new ContextMenu({
@@ -274,7 +274,7 @@ export default new ContextMenu({
 </details>
 
 <details>
-<summary><b>Prefix Commands</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/prefix">commands/prefix</a>
+<summary><b>Prefix Commands</b></summary> You can find more examples at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/commands/prefix">commands/prefix</a>
 
 ```ts
 export default new PrefixCommand({
@@ -290,7 +290,7 @@ export default new PrefixCommand({
 </details>
 
 <details>
-<summary><b>Autocomplete Commands</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/commands/slash/showcase/autocomplete.ts">commands/slash/showcase/autocomplete.ts</a>
+<summary><b>Autocomplete Commands</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/commands/slash/showcase/autocomplete.ts">commands/slash/showcase/autocomplete.ts</a>
 
 ```ts
 export default new SlashCommand({
@@ -378,7 +378,7 @@ If no unique ID is required, you can use just the base identifier, such as `butt
 ### Component Examples
 
 <details>
-<summary><b>Buttons</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/components/buttons/buttons.ts">components/buttons/buttons.ts</a>
+<summary><b>Buttons</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/components/buttons/buttons.ts">components/buttons/buttons.ts</a>
 
 #### Creating the Buttons
 ```ts
@@ -414,7 +414,7 @@ export default new Button({
 </details> 
 
 <details>
-<summary><b>Select Menus</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/components/selectMenus/select.ts">components/selectMenus/select.ts</a>
+<summary><b>Select Menus</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/components/selectMenus/select.ts">components/selectMenus/select.ts</a>
 
 #### Creating the Select Menu
 ```ts
@@ -466,7 +466,7 @@ export default new SelectMenu({
 </details> 
 
 <details>
-<summary><b>Modals</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discordjs-command-handler/tree/master/src/components/modals/askModal.ts">components/modals/askModal.ts</a>
+<summary><b>Modals</b></summary> You can find this example at: <a href="https://github.com/lukazbaum/discord-bot-handler/tree/master/src/components/modals/askModal.ts">components/modals/askModal.ts</a>
 
 #### Creating the Modal
 ```ts
@@ -648,13 +648,13 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 
 <!-- MARKDOWN LINKS -->
-[forks-shield]: https://img.shields.io/github/forks/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
-[forks-url]: https://github.com/lukazbaum/discordjs-command-handler/network/members
-[stars-shield]: https://img.shields.io/github/stars/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
-[stars-url]: https://github.com/lukazbaum/discordjs-command-handler/stargazers
-[issues-shield]: https://img.shields.io/github/issues/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
-[issues-url]: https://github.com/lukazbaum/discordjs-command-handler/issues
-[license-shield]: https://img.shields.io/github/license/lukazbaum/discordjs-command-handler.svg?style=for-the-badge
-[license-url]: https://github.com/lukazbaum/discordjs-command-handler/blob/master/LICENSE.txt
+[forks-shield]: https://img.shields.io/github/forks/lukazbaum/discord-bot-handler.svg?style=for-the-badge
+[forks-url]: https://github.com/lukazbaum/discord-bot-handler/network/members
+[stars-shield]: https://img.shields.io/github/stars/lukazbaum/discord-bot-handler.svg?style=for-the-badge
+[stars-url]: https://github.com/lukazbaum/discord-bot-handler/stargazers
+[issues-shield]: https://img.shields.io/github/issues/lukazbaum/discord-bot-handler.svg?style=for-the-badge
+[issues-url]: https://github.com/lukazbaum/discord-bot-handler/issues
+[license-shield]: https://img.shields.io/github/license/lukazbaum/discord-bot-handler.svg?style=for-the-badge
+[license-url]: https://github.com/lukazbaum/discord-bot-handler/blob/master/LICENSE.txt
 
 <!-- Thanks to othneildrew for this amazing template (https://github.com/othneildrew/Best-README-Template) -->
