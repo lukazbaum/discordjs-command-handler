@@ -1,5 +1,12 @@
 import type { Config } from './handler';
-import { GatewayIntentBits } from 'discord.js';
+import {
+  type ContextMenuCommandInteraction,
+  EmbedBuilder,
+  GatewayIntentBits,
+  type Interaction,
+  Message,
+  type MessageReplyOptions,
+} from 'discord.js';
 
 const defaultConfig: Config = {
   prefix: '!',
@@ -32,6 +39,43 @@ const defaultConfig: Config = {
       user: 'You can use this command again in {time} seconds.',
       guild: 'This command is on cooldown for this server. Try again in {time} seconds.',
       global: 'This command is on global cooldown. Try again in {time} seconds.',
+    },
+  },
+
+  logChannelConfig: {
+    channelId: 'YOUR_LOG_CHANNEL_ID',
+    message: async (
+      context: Interaction | ContextMenuCommandInteraction | Message,
+      commandName: string,
+      commandType: string,
+    ): Promise<MessageReplyOptions> => {
+      const authorId: string = context instanceof Message ? context.author.id : context.user.id;
+      const authorIconURL: string =
+        context instanceof Message ? context.author.displayAvatarURL() : context.user.displayAvatarURL();
+
+      const messageURL: string | undefined =
+        context.guild && context.channel
+          ? `https://discord.com/channels/${context.guild.id}/${context.channel.id}/${context.id}`
+          : undefined;
+
+      const logEmbed: EmbedBuilder = new EmbedBuilder()
+        .setTitle(`${commandType} triggered`)
+        .setColor('Blurple')
+        .setDescription(
+          `**${commandType}**: \`${commandName}\`\n**User**: <@${authorId}>\n**Channel**: <#${context.channel?.id}>`,
+        )
+        .setThumbnail(authorIconURL)
+        .setTimestamp();
+
+      const isEphemeralInteraction = !(context instanceof Message) && 'ephemeral' in context && context.ephemeral;
+
+      if (messageURL && !isEphemeralInteraction) {
+        logEmbed.setURL(messageURL);
+      }
+
+      return {
+        embeds: [logEmbed],
+      };
     },
   },
 };

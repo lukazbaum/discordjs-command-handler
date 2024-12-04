@@ -20,6 +20,7 @@ export abstract class BaseCommand {
   restrictedToOwner?: boolean;
   restrictedToNSFW?: boolean;
   isDisabled?: boolean;
+  logUsage?: boolean;
 
   protected constructor(args: Partial<BaseCommand> = {}) {
     Object.assign(this, args);

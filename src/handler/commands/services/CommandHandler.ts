@@ -1,16 +1,19 @@
 import config from '../../../config';
 import { client } from '../../../index';
 import { LogManager } from '../../utils/LogManager';
+import type { LogChannelConfig } from '../../types/Config';
 import type { PrefixCommand } from '../prefix/PrefixCommand';
 import type { ContextMenu } from '../interactions/ContextMenu';
 import type { SlashCommand } from '../interactions/SlashCommand';
 import { CommandValidator } from '../validators/CommandValidator';
 import {
   AutocompleteInteraction,
+  Channel,
   ChatInputCommandInteraction,
   Colors,
   ContextMenuCommandInteraction,
   EmbedBuilder,
+  Interaction,
   Message,
 } from 'discord.js';
 
@@ -32,6 +35,7 @@ export class CommandHandler {
 
     try {
       await command.execute(interaction);
+      if (command.logUsage) await this.sendUsageLog(interaction, interaction.commandName, 'Slash Command');
     } catch (err) {
       LogManager.logError(`Error executing command ${interaction.commandName}`, err);
     }
@@ -48,6 +52,7 @@ export class CommandHandler {
 
     try {
       await contextMenu.execute(interaction);
+      if (contextMenu.logUsage) await this.sendUsageLog(interaction, interaction.commandName, 'Context Menu');
     } catch (err) {
       LogManager.logError(`Error executing context menu ${interaction.commandName}`, err);
     }
@@ -67,6 +72,7 @@ export class CommandHandler {
 
     try {
       await command.execute(message);
+      if (command.logUsage) await this.sendUsageLog(message, resolvedCommandName, 'Prefix Command');
     } catch (err) {
       LogManager.logError(`Error executing prefix command ${resolvedCommandName}`, err);
     }
@@ -109,5 +115,25 @@ export class CommandHandler {
       ephemeral: true,
     }) || context.channel.send({ embeds: [replyEmbed] }));
     return false;
+  }
+
+  private static async sendUsageLog(
+    context: Interaction | ContextMenuCommandInteraction | Message,
+    commandName: string,
+    commandType: string,
+  ): Promise<void> {
+    try {
+      const logChannelConfig: LogChannelConfig | undefined = config.logChannelConfig;
+      if (!logChannelConfig) return;
+
+      const channel: Channel | null = await client.channels.fetch(logChannelConfig.channelId);
+      if (!channel) return;
+
+      if (channel.isSendable()) {
+        await channel.send(await logChannelConfig.message(context, commandName, commandType));
+      }
+    } catch (err) {
+      LogManager.logError(`Error sending command usage log for command ${commandName}`, err);
+    }
   }
 }

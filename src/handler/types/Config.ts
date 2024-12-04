@@ -1,4 +1,10 @@
-import type { GatewayIntentBits } from 'discord.js';
+import type {
+  ContextMenuCommandInteraction,
+  GatewayIntentBits,
+  Interaction,
+  Message,
+  MessageReplyOptions,
+} from 'discord.js';
 
 export interface Config {
   prefix: string;
@@ -8,4 +14,10 @@ export interface Config {
   componentsFolder: string;
   defaultIntents: GatewayIntentBits[];
   deniedCommandReplies: any;
+  logChannelConfig?: LogChannelConfig;
+}
+
+export interface LogChannelConfig {
+  channelId: string;
+  message: (context: Interaction | ContextMenuCommandInteraction | Message, commandName: string, commandType: string) => Promise<MessageReplyOptions>;
 }
