@@ -19,5 +19,9 @@ export interface Config {
 
 export interface LogChannelConfig {
   channelId: string;
-  message: (context: Interaction | ContextMenuCommandInteraction | Message, commandName: string, commandType: string) => Promise<MessageReplyOptions>;
+  message: (
+    context: Interaction | ContextMenuCommandInteraction | Message,
+    commandName: string,
+    commandType: string,
+  ) => Promise<MessageReplyOptions>;
 }
