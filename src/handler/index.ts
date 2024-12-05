@@ -30,4 +30,5 @@ export * from './types/TimestampStyle';
 export * from './utils/ColoredMessageBuilder';
 export * from './utils/EmbedPaginator';
 export * from './utils/formatTimestamp';
+export * from './utils/logChannelPresets';
 export * from './utils/LogManager';
