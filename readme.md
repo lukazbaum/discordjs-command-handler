@@ -220,6 +220,7 @@ The following table explains the optional configuration arguments available for 
 | `restrictedToOwner?`         | `boolean`  | Restricts the command to the bot owner only.                                                       |
 | `restrictedToNSFW?`          | `boolean`  | Restricts the command to NSFW channels only.                                                       |
 | `isDisabled?`                | `boolean`  | Disables the command entirely, making it unavailable for use.                                      |
+| `logUsage?`                  | `boolean`  | Logs the usage of a command to the channel specified in the config.                                |
 | `aliases?`                   | `string[]` | List of alternate names for the command that can be used to invoke it. *(Only for PrefixCommands)* |
 
 **¹Note on Optional Whitelists**: When using optional whitelists, the command will be allowed to execute if any one of the optional whitelist conditions is met.
@@ -612,7 +613,7 @@ await interaction.reply({ content: coloredMessage });
 # Roadmap
 
 - [x] Enhance the Embed Paginator to support non-interaction-based commands.
-- [ ] Add a command argument which logs command usage.
+- [x] Add a command argument which logs command usage.
 - [ ] Enhance the Embed Paginator to support custom components.
 - [ ] Increase customization options for denied command responses.
 - [ ] Add command-line tools to quickly create commands, components and events with predefined templates.
