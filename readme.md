@@ -552,16 +552,31 @@ The `EmbedPaginator` is a powerful utility for displaying paginated embeds with 
 
 ### Usage Example:
 ```ts
-const pages: EmbedBuilder[] = [
+const pages = [
   new EmbedBuilder()
     .setTitle('Welcome to the Paginator')
     .setDescription('This is **Page 1** of the paginator.')
     .setColor(Colors.Blue),
+  {
+    embed: new EmbedBuilder()
+      .setTitle('Page 2 with Buttons')
+      .setDescription('Here is **Page 2** with custom buttons.')
+      .setColor(Colors.Green),
+    components: [
+      new ActionRowBuilder<ButtonBuilder>().addComponents(
+        new ButtonBuilder()
+          .setCustomId('buttons:confirm')
+          .setLabel('Confirm')
+          .setStyle(ButtonStyle.Success),
+        new ButtonBuilder()
+          .setCustomId('buttons:cancel')
+          .setLabel('Cancel')
+          .setStyle(ButtonStyle.Danger),
+      ),
+    ],
+  },
   new EmbedBuilder()
-    .setTitle('Page 2')
-    .setDescription('Here is some more information on **Page 2**.')
-    .setColor(Colors.Green),
-  new EmbedBuilder().setTitle('Page 3')
+    .setTitle('Page 3')
     .setDescription('Finally, this is **Page 3**. Enjoy!')
     .setColor(Colors.Red),
 ];
