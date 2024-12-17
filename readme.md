@@ -519,16 +519,20 @@ The `EmbedPaginator` is a powerful utility for displaying paginated embeds with 
 
 ### Paginator Settings
 
-| **Field**                  | **Type**          | **Description**                                                                      |
-|----------------------------|-------------------|--------------------------------------------------------------------------------------|
-| `pages`                    | `EmbedBuilder[]`  | An array of `EmbedBuilder` instances representing the pages of content to paginate.  |
-| `timeout`                  | `number`          | The time (in seconds) before the paginator buttons become inactive.                  |
-| `buttons?`                 | `ButtonPartial[]` | Custom settings for paginator buttons. Defines button type, label, style, and emoji. |
-| `showButtonsAfterTimeout?` | `boolean`         | Whether to keep the paginator buttons visible after the timeout period.              |
-| `hideFirstLastButtons?`    | `boolean`         | Whether to hide the "First" and "Last" buttons in the paginator.                     |
-| `loopPages?`               | `boolean`         | Whether to loop back to the first page after the last page is reached.               |
-| `autoPageDisplay?`         | `boolean`         | Whether to display the current page number in the footer of the embed.               |
-| `restrictToAuthor?`        | `boolean`         | Restricts interactions to the user who triggered the paginator. Default is `true`.   |
+| **Field**                  | **Type**                            | **Description**                                                                                         |
+|----------------------------|-------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `pages`                    | `(EmbedBuilder or PaginatorPage)[]` | An array of `EmbedBuilder` and `PaginatorPage` instances representing the pages of content to paginate. |
+| `timeout`                  | `number`                            | The time (in seconds) before the paginator buttons become inactive.                                     |
+| `buttons?`                 | `ButtonPartial[]`                   | Custom settings for paginator buttons. Defines button type, label, style, and emoji.                    |
+| `showButtonsAfterTimeout?` | `boolean`                           | Whether to keep the paginator buttons visible after the timeout period.                                 |
+| `hideFirstLastButtons?`    | `boolean`                           | Whether to hide the "First" and "Last" buttons in the paginator.                                        |
+| `loopPages?`               | `boolean`                           | Whether to loop back to the first page after the last page is reached.                                  |
+| `autoPageDisplay?`         | `boolean`                           | Whether to display the current page number in the footer of the embed.                                  |
+| `restrictToAuthor?`        | `boolean`                           | Restricts interactions to the user who triggered the paginator. Default is `true`.                      |
+
+**PaginatorPage:**
+- `embed`: The embed displayed for this page. (`EmbedBuilder`).
+- `components?`: Components to include on this page. Supports all valid `ActionRowBuilder` types. (`ActionRowBuilders[]`)
 
 **ButtonPartial:**
 - `type`: Specifies the type of the button (`PaginatorButtonType`).
@@ -614,7 +618,7 @@ await interaction.reply({ content: coloredMessage });
 
 - [x] Enhance the Embed Paginator to support non-interaction-based commands.
 - [x] Add a command argument which logs command usage.
-- [ ] Enhance the Embed Paginator to support custom components.
+- [x] Enhance the Embed Paginator to support custom components.
 - [ ] Increase customization options for denied command responses.
 - [ ] Add command-line tools to quickly create commands, components and events with predefined templates.
 - [ ] Implement a plugin system, enabling features like a ticket system to be seamlessly integrated into the project with a single line of code.
