@@ -1,11 +1,17 @@
-import { PaginatorButtonType, type PaginatorSendOptions, type PaginatorSettings } from '../types/Paginator';
+import {
+  type ActionRowBuilders,
+  PaginatorButtonType,
+  type PaginatorPage,
+  type PaginatorSendOptions,
+  type PaginatorSettings,
+} from '../types/Paginator';
 import {
   ActionRowBuilder,
   AutocompleteInteraction,
   ButtonBuilder,
   ButtonStyle,
   CommandInteraction,
-  type EmbedBuilder,
+  EmbedBuilder,
   Message,
   MessageComponentInteraction,
   type MessagePayloadOption,
@@ -34,12 +40,13 @@ export class EmbedPaginator {
       content,
       ephemeral: ephemeral ?? false,
       embeds: [this.getPageEmbed()],
-      components: [this.createButtonRow()],
+      components: this.getPageComponents(),
       fetchReply: true,
     };
 
-    if (!messageOptions.content) delete messageOptions.content;
-    if (!messageOptions.embeds) delete messageOptions.embeds;
+    if (!messageOptions.content) {
+      delete messageOptions.content;
+    }
 
     let sentMessage: Message;
 
@@ -60,13 +67,27 @@ export class EmbedPaginator {
   }
 
   private getPageEmbed(): EmbedBuilder {
-    const embed: EmbedBuilder = this.settings.pages[this.currentPageIndex];
+    const page: EmbedBuilder | PaginatorPage = this.settings.pages[this.currentPageIndex];
+    const embed: EmbedBuilder = (page as PaginatorPage)?.embed ?? page as EmbedBuilder;
 
     if (this.settings.autoPageDisplay) {
       embed.setFooter({ text: `Page ${this.currentPageIndex + 1}/${this.maxPageIndex}` });
     }
 
     return embed;
+  }
+
+  private getPageComponents(): ActionRowBuilders[] {
+    const page: EmbedBuilder | PaginatorPage = this.settings.pages[this.currentPageIndex];
+    const components: ActionRowBuilders[] = [];
+    components.push(this.createButtonRow());
+
+    if (!(page instanceof EmbedBuilder) && page.components) {
+      const customComponents: ActionRowBuilders[] = page.components;
+      components.push(...customComponents);
+    }
+
+    return components;
   }
 
   private createButtonRow(): ActionRowBuilder<ButtonBuilder> {
@@ -90,8 +111,8 @@ export class EmbedPaginator {
         .setEmoji(customConfig?.emoji ?? config.emoji)
         .setDisabled(
           !this.settings.loopPages &&
-            (((+type === PaginatorButtonType.First || +type === PaginatorButtonType.Previous) && isFirstPage) ||
-              ((+type === PaginatorButtonType.Next || +type === PaginatorButtonType.Last) && isLastPage)),
+          (((+type === PaginatorButtonType.First || +type === PaginatorButtonType.Previous) && isFirstPage) ||
+            ((+type === PaginatorButtonType.Next || +type === PaginatorButtonType.Last) && isLastPage)),
         );
 
       if (customConfig?.label) {
@@ -124,8 +145,6 @@ export class EmbedPaginator {
 
     collector.on('collect', async (interaction: MessageComponentInteraction): Promise<void> => {
       try {
-        await interaction.deferUpdate();
-
         switch (interaction.customId) {
           case 'paginator:first':
             this.currentPageIndex = 0;
@@ -139,11 +158,15 @@ export class EmbedPaginator {
           case 'paginator:last':
             this.currentPageIndex = this.maxPageIndex - 1;
             break;
+          default:
+            return;
         }
+
+        await interaction.deferUpdate();
 
         await interaction.editReply({
           embeds: [this.getPageEmbed()],
-          components: [this.createButtonRow()],
+          components: this.getPageComponents(),
         });
       } catch (error) {
         console.error('Error handling interaction:', error);

@@ -1,4 +1,16 @@
-import type { ButtonStyle, EmbedBuilder, Interaction, Message } from 'discord.js';
+import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  ChannelSelectMenuBuilder,
+  EmbedBuilder,
+  Interaction,
+  MentionableSelectMenuBuilder,
+  Message,
+  RoleSelectMenuBuilder,
+  StringSelectMenuBuilder,
+  UserSelectMenuBuilder,
+} from 'discord.js';
 
 export enum PaginatorButtonType {
   First,
@@ -8,7 +20,7 @@ export enum PaginatorButtonType {
 }
 
 export interface PaginatorSettings {
-  pages: EmbedBuilder[];
+  pages: (EmbedBuilder | PaginatorPage)[];
   timeout: number;
   buttons?: {
     type: PaginatorButtonType;
@@ -21,6 +33,19 @@ export interface PaginatorSettings {
   loopPages?: boolean;
   autoPageDisplay?: boolean;
   restrictToAuthor?: boolean;
+}
+
+export type ActionRowBuilders =
+  ActionRowBuilder<ButtonBuilder>
+  | ActionRowBuilder<StringSelectMenuBuilder>
+  | ActionRowBuilder<UserSelectMenuBuilder>
+  | ActionRowBuilder<RoleSelectMenuBuilder>
+  | ActionRowBuilder<MentionableSelectMenuBuilder>
+  | ActionRowBuilder<ChannelSelectMenuBuilder>;
+
+export interface PaginatorPage {
+  embed: EmbedBuilder;
+  components?: ActionRowBuilders[];
 }
 
 export interface PaginatorSendOptions {
